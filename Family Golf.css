@@ -1,0 +1,461 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Franklin Gothic;
+  color: white;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* perspective: 800px; */
+}
+
+#cursor {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(141, 201, 2);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9;
+}
+
+#cursorblur {
+  height: 250px;
+  width: 250px;
+  background-color: rgb(132, 181, 11);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9;
+  filter: blur(90px);
+}
+
+#nav {
+  height: 140px;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  position: fixed;
+  z-index: 99;
+}
+
+#nav img {
+  height: 80px;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -2;
+}
+
+#nav h4 {
+  text-transform: uppercase;
+  font-weight: 100;
+}
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.429);
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  /* background-color: red; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9;
+}
+
+#page1 h1::before {
+  content: "EAT. DRINK. PLAY.";
+  position: absolute;
+  color: black;
+  top: -4px;
+  left: -4px;
+  -webkit-text-stroke: 1px rgb(141, 201, 2);
+  z-index: -1;
+}
+
+#page1 h1 {
+  position: relative;
+  font-size: 100px;
+}
+#page1 h2 {
+  font-size: 30px;
+  z-index: 9;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#page1 p {
+  font-size: 18px;
+  width: 55%;
+  text-align: center;
+}
+
+/* #page1 #arrow {
+  height: 250px;
+  width: 250px;
+  background-color: transparent;
+  border: 2px solid #95c11e;
+  position: absolute;
+  display: flex;
+  left: -2%;
+  bottom: 0%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all ease 0.5s;
+}
+#page1 #arrow i {
+  font-size: 50px;
+  font-weight: 100;
+}
+#page1 #arrow:hover {
+  scale: 0.4;
+  background-color: #95c11e;
+} */
+
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+}
+
+#scroller {
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 9;
+}
+
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+
+#scroller h4 {
+  font-size: 90px;
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 20px;
+  transition: all linear 0.3s;
+  color: transparent;
+  -webkit-text-stroke: 2px rgb(255, 255, 255);
+}
+
+#scroller h4:hover {
+  color: #95c11e;
+  -webkit-text-stroke: 2px #95c11e;
+}
+
+#scroller-in-1 {
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#about-us {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  /* background-color: red; */
+  padding: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 10;
+  position: relative;
+}
+
+#about-us img {
+  height: 250px;
+  width: 250px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+#about-us-in-1 {
+  text-align: center;
+  width: 40%;
+}
+
+#about-us-in-1 h3 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+#about-us-in-1 p {
+  line-height: 20px;
+  font-size: 20px;
+}
+
+#card-container {
+  /* background-color: red; */
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  z-index: 10;
+  position: relative;
+}
+
+.card {
+  height: 70%;
+  width: 25%;
+  /* background-color: black; */
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all ease 0.6s;
+}
+
+#card-1 {
+  background-image: url(toptracer-06-768x507.webp);
+}
+#card-2 {
+  background-image: url(Baryonyx-Dinosaur.jpg);
+}
+#card-3 {
+  background-image: url(tee-it-up-5.webp);
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding: 50px;
+  padding-top: 100px;
+  opacity: 0;
+  transition: all ease 0.6s;
+}
+
+.overlay h4 {
+  color: black;
+  white-space: nowrap;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+.overlay p {
+  color: black;
+  font-size: 16px;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: rotate3d(-1, 1, 0, 25deg);
+}
+
+#green-div {
+  background: linear-gradient(green, yellowgreen);
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+  align-items: center;
+  position: relative;
+}
+
+#green-div h4 {
+  z-index: 9;
+  position: relative;
+  text-align: center;
+  line-height: 30px;
+  width: 50%;
+  font-size: 20px;
+}
+
+#green-div img{
+  height: 100%;
+  object-fit: cover;;
+  width: 12%;
+}
+
+#page3{
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page3 > p {
+  font-size: 35px;
+  font-weight: 700;
+  width: 60%;
+  line-height: 45px;
+  text-align: center;
+}
+
+#page3 img {
+  position: absolute;
+  height: 60px;
+}
+#page3 #colon1 {
+  left: 15%;
+  top: 25%;
+}
+#page3 #colon2 {
+  bottom: 30%;
+  right: 15%;
+}
+
+#page4{
+  height: 50vh;
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+}
+
+.elem{
+  height: 70%;
+  width: 25%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+.elem h2{
+  position: absolute;
+  z-index: 10;
+  font-weight: 800;
+  color: black;
+  height: 100%;
+  width: 100%;
+  background-color: #95C11E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all ease 1s;
+}
+
+.elem img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 1s;
+  scale: 1.1;
+}
+
+.elem:hover h2{
+  color: rgba(255, 255, 255, 0.899);
+  background-color: transparent;
+}
+
+.elem:hover img{
+  scale: 1.1;
+}
+
+#page4 h1{
+  font-size: 100px;
+  position: absolute;
+  top: -2%;
+  color: black;
+  -webkit-text-stroke: 2px white;
+  font-weight: 800;
+}
+
+#footer {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(to left bottom, #119f3a 0%, #a3d421 80%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6.5vw;
+  padding: 0 100px;
+}
+
+#footer > img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+#f1 img {
+  height: 100px;
+}
+
+#f1,
+#f2,
+#f3,
+#f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 99;
+  /* background-color: red; */
+}
+
+#f2 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+#f3 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+#f4 h4 {
+  font-size: 1vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
